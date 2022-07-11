@@ -1,2 +1,2 @@
-web: node keyval-store/app.js/server.js
+web: node ./server.js
 
