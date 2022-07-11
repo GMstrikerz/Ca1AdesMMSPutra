@@ -1,5 +1,5 @@
 const isLocalhost = location.host === 'localhost' || location.host === '127.0.0.1';
-const STORAGE_API_HOST = isLocalhost ? `http://localhost:3000` : `https://ca1adesmodulemanagementsystem.herokuapp.com/`;
+const STORAGE_API_HOST = isLocalhost ? `http://localhost:3000` : `https://ca1adesmodulemanagementsystem.herokuapp.com`;
 const letterGrades = {
     4: 'A',
     3.5: 'B+',
