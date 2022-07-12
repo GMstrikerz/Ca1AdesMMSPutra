@@ -255,11 +255,6 @@ function updateCreditunitFromServer() {
 .then((response) => {
   response.json();
 })
-.then((data) => {
-    record_id = data.moduleid
-        moduleName = data.modulename
-        creditunit = data.creditunit
-})
   updateFields(creditUnit);
 }
 
@@ -298,8 +293,8 @@ function emptyFieldBox() {
   document.getElementById("moduleName").value = "";
   document.getElementById("creditUnit").value = "";
 }
-function updateFields(creditunit) {
-  document.getElementById("creditUnit").value = record.creditUnit;
+function updateFields(creditUnit) {
+  document.getElementById("creditUnit").value = creditUnit;
 }
 
 
