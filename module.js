@@ -13,6 +13,7 @@ const InsertButton = document.querySelector('#insert-btn');
     // Add module
     const moduleNameInput = document.querySelector('#moduleName');
     const creditInput = document.querySelector('#creditUnit');
+    const semesterInput=document.querySelector("#semester");
 
   
 
@@ -44,6 +45,7 @@ function loadModulesFromServer() {
           <th scope="row">${module["id"]}</th>
          <td>${module["modulename"]}</td>
            <td>${module["creditunit"]}</td>
+           <td>${module["semester"]}</td>
            <td><button onclick="updateCreditunitFromServer(${module["id"]})
    " class="btn btn-info">Edit</button></td>
            <td><button data-toggle="modal" data-target="#deleteModalCenter" onclick="deleteModulefromServer(${module["id"]})
@@ -85,6 +87,7 @@ function loadDataFromLocalStorage() {
               <th scope="row">${idx + 1}</th>
              <td>${data.moduleName}</td>
                <td>${data.creditUnit}</td>
+               <td>${data.Semester}</td>
                <td><button onclick="updateDataFromLocalStorage('${data.record_id
        }')" class="btn btn-info">Edit</button></td>
                <td><button data-toggle="modal" data-target="#deleteModalCenter" onclick="deleteDataFromLocalStorage('${data.record_id
@@ -160,7 +163,9 @@ function genrateUniqueId(length) {
 function createNewRecord() {
   const currentModuleName = document.getElementById("moduleName").value;
   const currentcreditUnit = document.getElementById("creditUnit").value;
-  if (validate(currentModuleName, currentcreditUnit)) {
+  const currentSemester= document.getElementById("semester").value;
+
+  if (validate(currentModuleName, currentcreditUnit,currentSemester)) {
    // let modules={currentModuleName,currentcreditUnit}
     fetch(`${STORAGE_API_HOST}/Module`,
      {
@@ -168,7 +173,7 @@ function createNewRecord() {
       headers: {
           'Content-Type': 'application/json',
       },
-      body: JSON.stringify({currentModuleName,currentcreditUnit}),
+      body: JSON.stringify({currentModuleName,currentcreditUnit,currentSemester}),
   })
       .then((response) => {
         if (response.status === 201) {
