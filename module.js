@@ -256,6 +256,7 @@ function updateCreditunitFromServer() {
   response.json();
 })
   updateFields(creditUnit);
+  //updatefield creditUnit
 }
 
 
