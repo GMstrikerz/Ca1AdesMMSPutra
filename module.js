@@ -255,7 +255,7 @@ function updateCreditunitFromServer() {
 .then((response) => {
   response.json();
 })
-  updateFields(creditunit);
+  updateFields(creditUnit);
 }
 
 
