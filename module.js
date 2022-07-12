@@ -255,7 +255,7 @@ function updateCreditunitFromServer() {
 .then((response) => {
   response.json();
 })
-  updateFields(creditUnit);
+  updateFields(creditunit);
 }
 
 
@@ -294,7 +294,7 @@ function emptyFieldBox() {
   document.getElementById("creditUnit").value = "";
 }
 function updateFields(creditUnit) {
-  document.getElementById("creditUnit").value = creditUnit;
+  document.getElementById("creditUnit").value =creditUnit;
 }
 
 
