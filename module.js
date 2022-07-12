@@ -241,26 +241,6 @@ function deleteDataFromLocalStorage(records_id) {
   });
 }
 
-//update creditunit from server 
-function updateCreditunitFromServer() {
-  
-  displayNoneInsertMarkup();
-  fetch(`${STORAGE_API_HOST}/Module/`,{
-     method:'GET',
-     headers: {
-      'Content-Type': 'application/json',
-     },
-})
-.then((response) => {
-  response.json();
-})
-.then((data) => {
-    record_id = data.moduleid
-        moduleName = data.modulename
-        creditunit = data.creditUnit
-})
-  updateFields(creditUnit);
-}
 
 
 
