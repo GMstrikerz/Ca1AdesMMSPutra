@@ -277,9 +277,7 @@ function emptyFieldBox() {
   document.getElementById("creditUnit").value = "";
 }
 
-function updateFields(creditunit) {
-  document.getElementById("creditUnit").value = record.creditUnit;
-}
+
 
 function displayNoneInsertMarkup() {
   document.getElementById("insert-heading").style.display = "none";
