@@ -255,11 +255,11 @@ function updateCreditunitFromServer() {
   response.json();
 })
 .then((data) => {
-    record_id = data.id
+    record_id = data.moduleid
         moduleName = data.modulename
-        creditunit = data.creditunit
+        creditunit = data.creditUnit
 })
-  updateFields(creditunit);
+  updateFields(creditUnit);
 }
 
 
